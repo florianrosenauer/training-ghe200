@@ -1,0 +1,14 @@
+name: Issues found
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  show-info:
+    runs-on: ubuntu-latest
+    steps:
+    - name: info
+      run: |
+        echo "triggered by issues"      
