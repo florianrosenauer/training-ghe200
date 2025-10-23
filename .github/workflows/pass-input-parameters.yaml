@@ -1,0 +1,19 @@
+name: Manual Workflow
+
+on: 
+  workflow_dispatch:
+    inputs:
+      param1:
+        description: "This is the name of the trainee who is taking the GH-200"
+        required: true
+        default: "Florian Rosenauer"
+jobs: 
+  manual-task:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout Repository
+      uses: actions/checkout@v4
+
+    - name: info
+      run: |
+        echo "Running manual task written by ${{ github.event.inputs.param1 }}"
